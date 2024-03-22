@@ -5,13 +5,16 @@ from sklearn.model_selection import KFold
 
 df = pd.read_excel('dataILnew.xlsx')
 scaler = MinMaxScaler()
-X1 = df.iloc[:, 2:13]
+X1 = df.iloc[:, 2:16]
 X1 = pd.DataFrame(X1)
+print(X1)
 Deviation = pd.DataFrame(df.iloc[:, -3])
+print(Deviation)
 yexp = pd.DataFrame(df.iloc[:, -2])
 ycosmo = pd.DataFrame(df.iloc[:, -1])
 Name = df.iloc[:, 1]
 data = pd.concat([Name, X1, Deviation, yexp, ycosmo], axis=1)
+print(data)
 k = list(set(Name))
 unique_names = list(set(Name))
 unique_names_fixed = list(set(Name))
@@ -19,7 +22,7 @@ unique_names_fixed = list(set(Name))
 num_folds = 10
 kfold = KFold(n_splits=num_folds, shuffle=True, random_state=42)
 
-save_directory = "cro-val-ln"
+save_directory = "10-folds"
 test_names = []
 
 for fold in range(1, 10):
