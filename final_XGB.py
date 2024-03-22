@@ -11,7 +11,7 @@ Y1 = data.iloc[:, -3]
 Y1 = pd.DataFrame(Y1)
 
 regressor = XGBRegressor(max_depth=7,
-                         learning_rate=0.05,
+                         learning_rate=0.07,
                          n_estimators=250,
                          )
 
