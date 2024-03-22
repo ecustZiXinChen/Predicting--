@@ -11,8 +11,8 @@ Y1 = data.iloc[:, -3]
 Y1 = pd.DataFrame(Y1)
 
 regressor = XGBRegressor(max_depth=7,
-                         learning_rate=0.9,
-                         n_estimators=210,
+                         learning_rate=0.05,
+                         n_estimators=250,
                          )
 
 k_model = regressor.fit(X1, Y1)
